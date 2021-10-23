@@ -34,6 +34,7 @@ describe("grammarBam", () => {
 
 //Failing it, and failing it, and failing it well.
 
+
 // b) Create the function that makes the test pass.
 // Time to make it pass
 // Declare grammarBam() and pass a parameter of array
@@ -46,14 +47,13 @@ describe("grammarBam", () => {
 const grammarBam = (array) => {
   let nameArr = array.map(obj => obj.name);
   let cap = nameArr.join(", ")
-    .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter
-    .toUpperCase()).split(",");
+    .replace(/(^\w{1})|(\s+\w{1})/g, letter =>
+    letter.toUpperCase()).split(",");
   let job = array.map(obj => obj.occupation);
   let info = cap.map((name, i) => `${name} is ${job[i]}.`);
-  let what = info
-    .map(element => element
-    .trim());
-return what
+  let what = info.map(element =>
+    element.trim());
+  return what
 };
  //This passed. I will continue to research how to make this more dynamic to take on any values in the object.
 
