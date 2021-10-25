@@ -11,9 +11,15 @@ Then, research the question to expand on your answer. Even if you feel you have 
 
   Researched answer: Rails gets to partake in the miracles of Ruby. Before researching, I had assumed that the table had to be altered and various other syntax to achieve the foreign key onto the table. It appears that under the migration that add_foreign_key along with the column name will produce the relationship between the two tables. Syntax format will be add_foreign_key(:cohort, :student).
   Ensure the structure are correct in the Cohort and Student models with a has_many and belongs_to respectively.
-  class Cohort < ApplicationRecord              class Student < ApplicationRecord
-    has_many :students                            belongs_to :cohort
-  end                                           end
+
+  class Cohort < ApplicationRecord              
+    has_many :students                            
+  end                                           
+
+  class Student < ApplicationRecord
+    belongs_to :cohort
+  end
+
   The foreign key should always go on the belongs_to side, which is the Student model. The naming convention is the modelname_id and datatype as integer, which will be cohort_id: integer.
 
 
