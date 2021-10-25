@@ -54,7 +54,7 @@ class BlogPostsController < ApplicationController
     if @post.destroy
       redirect_to blog_posts_path
     else
-      # ---8)The browser will redirect to the parameter passed. In this case, if the parameter is not being deleted, then the browser will go to the page of where the requested parameter is located. Currently @post is the storage the location tht will be found in the hash key on the Blogpost database.
+      # ---8)The browser will redirect to the parameter passed. In this case, if the parameter is not being deleted, then the browser will go to the page of where the requested parameter is located. Currently @post is the storing the location that will be found in the hash key on the Blogpost database.
       redirect_to blog_post_path(@post)
     end
   end
